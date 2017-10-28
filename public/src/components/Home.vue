@@ -7,7 +7,7 @@
         <p>바보카코는 전공서적 대여 서비스를 통해 종이 절약의 선순환 고리를 만듭니다.</p>
       </div>
       <div class="search-container">
-        <input type="text" name="search" placeholder="도서명/ISBN 검색">
+        <input v-model="keyword" type="text" name="search" placeholder="도서명/ISBN 검색">
         <div className="search-btn-container">
                   <v-icon>search</v-icon>
                 </div>
@@ -31,6 +31,7 @@
 import BookItem from './BookItem.vue'
 import Vue from "vue"
 import axios from "axios"
+import _ from "lodash"
 
 var VueFire = require('vuefire')
 var config = {
@@ -67,25 +68,62 @@ export default {
       
     }
   },
+  
   created() {
-    var bookList;
-    axios.get('http://52.79.207.88:8000/book').then(data => {
-  // bookList = data.data[0].id;
-  // bookList = 3;
-  bookList = data.data;
-  console.log(bookList.data)
-  this.bookList = data.data;
-});
-
+    this.getList();
+    // axios.get('http://52.79.207.88:8000/book').then(data => {
+    //     this.bookList = data.data;
+    // });
   },
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
-        bookList: '3'
+        bookList: '3',
+        keyword: null,
       }
     },
+    watch: {
+    // 질문이 변경될 때 마다 이 기능이 실행됩니다.
+    keyword: function (keyword) {
+      console.log("입력중", keyword)
+      // this.getSearchList(keyword);
+      this.getAnswer();
+      
+    }
+  },
   methods: {
+    getList() {
+      axios.get('http://52.79.207.88:8000/book').then(data => {
+        this.bookList = data.data;
+      });
+    },
+    getAnswer: _.debounce(
+      function () {
+        var vm = this
+        axios.get('http://52.79.207.88:8000/book/search', {
+          params: {
+            keyword: vm.keyword
+          }
+        }).then(function (res) {
+          console.log("검색완료", res)
+            vm.bookList = res.data;
+          });
+      },
+      500
+    ),
+    getSearchList: function(keyword) {
 
+      _.debounce(function() {
+        console.log("오에에", keyword)
+        axios.get('http://52.79.207.88:8000/book/search', {
+          params: {
+            keyword: keyword
+          }
+        }).then(data => {
+          this.bookList = data.data;
+        })
+      }, 5);
+    }
   },
   components: {
     BookItem: BookItem,
