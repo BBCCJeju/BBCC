@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-nav>
+    <v-nav class="main-nav">
       <a href="#!" class="brand-logo" slot="logo"><router-link to="/">BBCC</router-link></a>
       <ul class="right">
         <li>
@@ -18,10 +18,7 @@
         </ul>
       </v-side-nav>
     </v-nav>
-    <v-container>
       <router-view></router-view>
-    </v-container>
-
   </div>
 </template>
 
@@ -61,12 +58,9 @@
     text-align: center;
     color: #2c3e50;
   }
-
-  h1, h2 {
-    font-weight: normal;
-  }
-
-  a {
-    color: #42b983;
+  .main-nav {
+    nav {
+      background: #00acc1;
+    }
   }
 </style>
