@@ -3,23 +3,23 @@
 		<div>
             <p> 대여정보 확인 </p>
         </div>
-		<div class="c-box">
+		<div class="o-card">
 			<v-card style="overflow: hidden;">
-				<div class="c-imgspace">
-		      		<div class="c-img">
+				<div class="o-imgspace">
+		      		<div class="o-img">
 		      			<a>book1</a>
 		      		</div>
-		      		<div class="c-img">
+		      		<div class="o-img">
 		      			<a>book2</a>
 		      		</div>
-		      		<div class="c-img">
+		      		<div class="o-img">
 		      			<a>book3</a>
 		      		</div>
-		      		<div class="c-img">
+		      		<div class="o-img">
 		      			<a>book4</a>
 		      		</div>
 		      	</div>
-		        <div class="c-total">
+		        <div class="o-total">
 		            <p> Total Textbook : 4 </p>
 		        </div>
 		    </v-card>
@@ -82,22 +82,22 @@ export default {
 
 <style lang="scss">
 
-.c-box {
+.o-card {
     margin: 0px 50px 50px 50px;
 }
 
-.c-imgspace {
+.o-imgspace {
 	height: 250px;
 }
 
-.c-img {
+.o-img {
 	width: 100px;
 	height: 200px;
 	margin: 20px;
 	float:left;
 }
 
-.c-total {
+.o-total {
 	margin: 20px;
 	float: right;
 }

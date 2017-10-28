@@ -1,6 +1,6 @@
 <template lang="html">
 <div class="test">
-	<div class="c-box">
+	<div class="p-card">
 
 		<div>
 			<p> 3개월 PLAN 구매 </p>
@@ -8,7 +8,7 @@
 		<div>
 			<p> 구매자 </p>
 		</div>
-		<div class="c-input">
+		<div class="p-input">
 			<div class="input-field">
             <v-text-input name="name"
                         id="name"
@@ -20,7 +20,7 @@
     	<div>
 			<p> 카드번호 </p>
 		</div>
-		<div class="c-input">
+		<div class="p-input">
 			<div class="input-field">
             <v-text-input name="cardNum"
                         id="cardNum"
@@ -32,7 +32,7 @@
     	<div>
 			<p> CVC </p>
 		</div>
-		<div class="c-input">
+		<div class="p-input">
 			<div class="input-field">
             <v-text-input name="cardCVC"
                         id="cardCVC"
@@ -66,14 +66,14 @@ export default {
 
 <style lang="scss">
 
-.c-box {
+.p-card {
     width: 380px;
 	height: 580px;
 	background-color: #ffffff;
 	box-shadow: 2px 6px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-.c-input {
+.p-input {
 	margin: 0px 20px 20px 20px;
 }
 
