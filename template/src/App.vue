@@ -18,7 +18,10 @@
         </ul>
       </v-side-nav>
     </v-nav>
-    <router-view></router-view>
+    <v-container>
+      <router-view></router-view>
+    </v-container>
+
   </div>
 </template>
 
@@ -28,7 +31,7 @@
   import Materials from "vue-materials"
   Vue.use(VueRouter)
   Vue.use(Materials);
-  
+
   import Order from './components/Order.vue'
   import Home from './components/Home.vue'
 
