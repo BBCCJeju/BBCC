@@ -157,7 +157,7 @@
 
 	</div>
 	<div>
-		<v-btn>대여</v-btn>
+		<v-btn><router-link to="/order/complete">대여</router-link></v-btn>
 	</div>
 		</div>
     </div>
@@ -168,6 +168,7 @@
 import BookItem from './BookItem.vue'
 
 export default {
+
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
@@ -175,13 +176,6 @@ export default {
           {title: '전공서적1', imageUrl: 'https://s3.amazonaws.com/titlepages.leanpub.com/vuejs2-korean/hero?1485448142'},
           {title: '전공서적2', imageUrl: 'http://www.acornpub.co.kr/image/book/nd/hx/1494927544fPzhoVnU.jpg'}
         ],
-        items1: [
-        {
-        },],
-        items2: [
-        {
-        }, {
-        }]
       }
     },
   methods: {
