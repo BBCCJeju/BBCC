@@ -32,11 +32,13 @@
   import Order from './components/Order.vue'
   import Home from './components/Home.vue'
   import Plan from './components/Plan.vue'
+  import MyPage from './components/MyPage.vue'
 
   const routes = [
     { path: '/', component: Home },
     { path: '/order', component: Order },
     { path: '/order/plan', component: Plan },
+    { path: '/my-page', component: MyPage },
   ];
 
   const router = new VueRouter({routes});
