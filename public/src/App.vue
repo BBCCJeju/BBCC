@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <v-nav class="main-nav">
-      <a href="#!" class="brand-logo" slot="logo"><router-link to="/">BBCC</router-link></a>
+      <a href="#!" class="brand-logo" slot="logo"><router-link to="/"><img src="./assets/logo-white.png"></router-link></a>
       <ul class="right">
         <li>
           <router-link to="/order">주문</router-link>
         </li>
         <li>
-          <a href="#!" v-side-nav:demo><v-icon>사이드</v-icon></a>
+          <a href="#!" v-side-nav:demo><v-icon>shopping_cart</v-icon></a>
         </li>
       </ul>
       <v-side-nav id="demo">
@@ -55,8 +55,14 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
+  }
+  .brand-logo {
+    img {
+      height: 25px;
+    margin-bottom: 4px;
+    }
+    
   }
   .main-nav {
     nav {

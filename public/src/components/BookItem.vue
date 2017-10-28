@@ -35,13 +35,15 @@ export default {
   methods: {
     addCart: function(e) {
       console.log("카트 담김", e, this.bookData)
-      localStorage.setItem(this.bookData.isbn, true);
+      localStorage.setItem(this.bookData.isbn, JSON.stringify(this.bookData));
       this.is_cart = true;
+      this.$emit('increment');
     },
     removeCart: function(e) {
       console.log("카트 빠짐", e, this.bookData)
       localStorage.removeItem(this.bookData.isbn);
       this.is_cart = false;
+      this.$emit('increment');
     }
   }
 }

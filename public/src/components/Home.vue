@@ -17,12 +17,28 @@
     <v-container>
     <section class="book-list-section">
        <v-row>
-         <v-grid s6 m4 v-for="(bookItem, index) in bookList" :key="bookItem.title">
-           <BookItem v-bind:bookData="bookItem"></BookItem>
+         <v-grid s6 m4 l3 v-for="(bookItem, index) in bookList" :key="bookItem.title">
+           <BookItem v-bind:bookData="bookItem" v-on:increment="incrementTotal"></BookItem>
         </v-grid>
       </v-row>
     </section>
     </v-container>
+    <section class="cart-section">
+      <h2>내가 담은 전공책</h2>
+      <div>
+      <div class="book-container">
+        <div class="cart-item" v-for="(cartItem, index) in cartList" :key="cartItem.title">
+           <img :src="JSON.parse(cartItem).img">
+        </div>
+      </div>
+      </v-row>
+      <div class="submit-btn">
+        대여하기
+        <v-icon>arrow_forward</v-icon>
+      </div>
+      </div>
+      
+    </section>
     
   </div>
 </template>
@@ -74,16 +90,25 @@ export default {
     // axios.get('http://52.79.207.88:8000/book').then(data => {
     //     this.bookList = data.data;
     // });
+
+    // console.log("호에에", this.allStorage());
+    this.cartList =  this.allStorage();
+    
+  },
+  computed: {
+    // cartList: function() {
+    //   return this.allStorage();
+    // }
   },
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
         bookList: '3',
         keyword: null,
+        cartList: []
       }
     },
     watch: {
-    // 질문이 변경될 때 마다 이 기능이 실행됩니다.
     keyword: function (keyword) {
       console.log("입력중", keyword)
       // this.getSearchList(keyword);
@@ -112,6 +137,22 @@ export default {
       },
       500
     ),
+    allStorage: function() {
+      var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+        console.log("올스토", keys)
+        while ( i-- ) {
+          var item = localStorage.getItem(keys[i]);
+          if(Number(keys[i])) {
+            values.push( localStorage.getItem(keys[i]) );
+          }
+        }
+        return values;
+    },
+    incrementTotal: function () {
+      this.cartList =  this.allStorage();
+    }
   },
   components: {
     BookItem: BookItem,
@@ -127,11 +168,11 @@ export default {
     padding-bottom: 4rem;
     .intro {
       padding-top: 2rem;
-    color: white;
-    font-size: 1.2rem;
-    p {
-      margin: 3px;
-    }
+      color: white;
+      font-size: 1.2rem;
+      p {
+        margin: 3px;
+      }
     }
     
   }
@@ -144,7 +185,7 @@ export default {
   padding: 7px;
   position: relative;
   top: 22px;
-  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.08);
   input {
     -webkit-flex: 1;
     flex: 1;
@@ -161,5 +202,63 @@ export default {
     }
   }
 
+}
+.cart-section {
+      z-index: 1003;
+    display: block;
+    opacity: 1;
+    bottom: 0px;
+    top: auto;
+    /* bottom: -100%; */
+    margin: 0;
+    width: 100%;
+    max-height: 45%;
+    border-radius: 0;
+    will-change: bottom, opacity;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    border-top: 1px solid #e2e2e2;
+    h2 {
+    font-size: 1rem;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 0.6rem;
+    margin: 0;
+    text-align: left;
+    margin-left: 7px;
+    font-weight: 900;
+    color: #404040;
+    }
+    >div {
+      padding: 3px;
+    }
+    .book-container {
+      float: left;
+      .cart-item {
+      display: inline-block;
+      width: 100px;
+      text-align: left;
+      img {
+            height: 120px;
+    width: 90px;
+      }
+    }  
+    }
+    .submit-btn {
+      float: right;
+          background: #00acc1;
+    color: white;
+    padding: 12px 17px;
+    border-radius: 3px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    i {
+          vertical-align: bottom;
+    }
+    }
+    
+    
 }
 </style>
