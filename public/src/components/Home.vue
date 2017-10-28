@@ -3,11 +3,12 @@
     <section class="intro-section">
       <v-container>
       <div class="intro">
-        <p>한 학기동안 3만원으로 전공서적을 6권까지 대여해보세요.</p>
-        <p>바보카코는 전공서적 대여 서비스를 통해 종이 절약의 선순환 고리를 만듭니다.</p>
+        <p>Are you a student?</p>
+        <p><b>6</b> Textbooks, Just <b>$30</b>.</p>
+        <p>Borrow it for one semester and save trees.</p>
       </div>
       <div class="search-container">
-        <input v-model="keyword" type="text" name="search" placeholder="도서명/ISBN 검색">
+        <input v-model="keyword" type="text" name="search" placeholder="Search the book with any keywords!">
         <div className="search-btn-container">
                   <v-icon>search</v-icon>
                 </div>
@@ -24,7 +25,7 @@
     </section>
     </v-container>
     <section class="cart-section">
-      <h2>내가 담은 전공책</h2>
+      <h2><v-icon>shopping_cart</v-icon>My Book Cart</h2>
       <div>
       <div class="book-container">
         <div class="cart-item" v-for="(cartItem, index) in cartList" :key="cartItem.title">
@@ -32,7 +33,7 @@
         </div>
       </div>
       </v-row>
-      <router-link to="/order"><div class="submit-btn">대여하기<v-icon>arrow_forward</v-icon></div></router-link>
+      <router-link to="/order"><div class="submit-btn">Borrow it!<v-icon>arrow_forward</v-icon></div></router-link>
       </div>
     </section>
   </div>
@@ -165,7 +166,18 @@ export default {
       color: white;
       font-size: 1.2rem;
       p {
+        
         margin: 3px;
+            font-size: 2rem;
+    font-weight: 100;
+    b {
+      color: #fbff12;
+      font-weight: 900;
+    }
+    &:first-of-type {
+              font-size: 3rem;
+    font-weight: 900;
+        }
       }
     }
     
@@ -224,19 +236,28 @@ export default {
     margin-left: 7px;
     font-weight: 900;
     color: #404040;
+    i {
+          vertical-align: middle;
+              margin-right: 5px;
+    }
     }
     >div {
-      padding: 3px;
+      padding: 10px;
+      overflow: hidden;
     }
     .book-container {
       float: left;
+      margin: 0;
       .cart-item {
       display: inline-block;
-      width: 100px;
       text-align: left;
+      margin-right: 1rem;
       img {
-            height: 120px;
-    width: 90px;
+            
+height: 84px;
+    width: 62px;
+    
+        
       }
     }  
     }
@@ -248,6 +269,7 @@ export default {
     border-radius: 3px;
     font-weight: 900;
     font-size: 1.1rem;
+        margin-top: 1.4rem;
     i {
           vertical-align: bottom;
     }
