@@ -3,7 +3,7 @@
     <section class="intro-section">
       <v-container>
       <div class="intro">
-        <p>한 학기동안 3만원으로 전공서적을 6권까지 대여해보세요.{{foo}}</p>
+        <p>한 학기동안 3만원으로 전공서적을 6권까지 대여해보세요.</p>
         <p>바보카코는 전공서적 대여 서비스를 통해 종이 절약의 선순환 고리를 만듭니다.</p>
       </div>
       <div class="search-container">
@@ -55,13 +55,7 @@ function showBookList() {
   return bookArr;
 }
 
-var foo;
-foo = 123
-axios.get('http://52.79.207.88:8000/book').then(data => {
-  // foo = data.data[0].id;
-  
-  console.log(typeof foo)
-});
+
 
 
 // showBookList();
@@ -73,10 +67,21 @@ export default {
       
     }
   },
+  created() {
+    var bookList;
+    axios.get('http://52.79.207.88:8000/book').then(data => {
+  // bookList = data.data[0].id;
+  // bookList = 3;
+  bookList = data.data;
+  console.log(bookList.data)
+  this.bookList = data.data;
+});
+
+  },
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
-        foo: foo
+        bookList: '3'
       }
     },
   methods: {

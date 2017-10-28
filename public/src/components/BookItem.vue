@@ -2,7 +2,9 @@
   <div>
     <v-card >
       <div class="card-image">
+          <!-- <img :src="bookData.img"> -->
           <img src="http://materializecss.com/images/sample-1.jpg">
+
           <span class="card-title">{{bookData.title}}</span>
       </div>
       <div class="v-card-content">
