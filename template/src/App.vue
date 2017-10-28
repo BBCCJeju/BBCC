@@ -40,6 +40,7 @@
   import Plan from './components/Plan.vue'
   import MyPage from './components/MyPage.vue'
   import Rental from './components/Rental.vue'
+  import Complete from './components/Complete.vue'
 
   const routes = [
     { path: '/', component: Home },
@@ -47,6 +48,7 @@
     { path: '/order/plan', component: Plan },
     { path: '/my-page', component: MyPage },
     { path: '/rental', component: Rental },
+    { path: '/order/complete', component: Complete },
   ];
 
   const router = new VueRouter({routes});
