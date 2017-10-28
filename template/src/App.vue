@@ -4,7 +4,7 @@
       <a href="#!" class="brand-logo" slot="logo"><router-link to="/">BBCC</router-link></a>
       <ul class="right">
         <li>
-          <router-link to="/order">주문</router-link>
+          <router-link to="/order/plan">주문</router-link>
         </li>
         <li>
           <a href="#!" v-side-nav:demo><v-icon>사이드</v-icon></a>
@@ -28,13 +28,15 @@
   import Materials from "vue-materials"
   Vue.use(VueRouter)
   Vue.use(Materials);
-  
+
   import Order from './components/Order.vue'
   import Home from './components/Home.vue'
+  import Plan from './components/Plan.vue'
 
   const routes = [
     { path: '/', component: Home },
     { path: '/order', component: Order },
+    { path: '/order/plan', component: Plan },
   ];
 
   const router = new VueRouter({routes});
