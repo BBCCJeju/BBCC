@@ -423,23 +423,6 @@ window.addEventListener('load', function () {
   // Listen for auth state changes
   firebase.auth().onAuthStateChanged(onAuthStateChanged);
 
-
-
-  // Saves message on form submit.
-  // messageForm.onsubmit = function (e) {
-  //   e.preventDefault();
-  //   var text = messageInput.value;
-  //   var title = titleInput.value;
-  //   if (text && title) {
-  //     newPostForCurrentUser(title, text).then(function () {
-  //       myPostsMenuButton.click();
-  //     });
-  //     messageInput.value = '';
-  //     titleInput.value = '';
-  //   }
-  // };
-
-
   // Saves message on form submit.
   messageForm.onsubmit = function (e) {
     e.preventDefault();
@@ -458,19 +441,7 @@ window.addEventListener('load', function () {
     createNewBook(bookData).then(function () {
       reply('success');
     });
-    messageInput.value = '';
-    titileInput.value = '';
-
   };
-  // createNewBook(bookData).then(function () {
-  //   myPostsMenuButton.click();
-  // });
-
-  // messageInput.value = '';
-  // titleInput.value = '';
-
-
-
 
   // Bind menu buttons.
   recentMenuButton.onclick = function () {
