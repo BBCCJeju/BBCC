@@ -18,7 +18,7 @@
 		    </v-card>
 
 		    <div class="p-box">
-					<v-btn>홈으로 돌아가기</v-btn>
+		    	<router-link to="/"><v-btn>홈으로 돌아가기</v-btn></router-link>
 				</div>
 		</div>
   </div>
@@ -35,13 +35,6 @@ export default {
           {title: '전공서적1', imageUrl: 'https://s3.amazonaws.com/titlepages.leanpub.com/vuejs2-korean/hero?1485448142'},
           {title: '전공서적2', imageUrl: 'http://www.acornpub.co.kr/image/book/nd/hx/1494927544fPzhoVnU.jpg'}
         ],
-        items1: [
-        {
-        },],
-        items2: [
-        {
-        }, {
-        }]
       }
     },
   methods: {

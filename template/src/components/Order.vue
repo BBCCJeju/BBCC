@@ -157,7 +157,7 @@
 
 	</div>
 	<div>
-		<v-btn><router-link to="/order/complete">대여</router-link></v-btn>
+		<router-link to="/order/complete"><v-btn>대여</v-btn></router-link>
 	</div>
 		</div>
     </div>
