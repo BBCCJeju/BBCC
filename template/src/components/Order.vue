@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-      <h1>안녕 나는 오더야</h1>
+      <h1>주문 폼 화면</h1>
   </div>
 </template>
 
