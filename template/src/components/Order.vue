@@ -6,18 +6,9 @@
 		<div class="o-card">
 			<v-card style="overflow: hidden;">
 				<div class="o-imgspace">
-		      		<div class="o-img">
-		      			<a>book1</a>
-		      		</div>
-		      		<div class="o-img">
-		      			<a>book2</a>
-		      		</div>
-		      		<div class="o-img">
-		      			<a>book3</a>
-		      		</div>
-		      		<div class="o-img">
-		      			<a>book4</a>
-		      		</div>
+		      		<li v-for="(bookItem, index) in bookList" :key="bookItem.title">
+					    <BookItem v-bind:bookData="bookItem"></BookItem>
+					</li>
 		      	</div>
 		        <div class="o-total">
 		            <p> Total Textbook : 4 </p>
@@ -39,6 +30,7 @@
             <v-text-input name="name"
                         id="name"
                         placeholder="홍길동"
+                        length="string"
             ></v-text-input>
         	</div>
     	</div>
@@ -51,6 +43,7 @@
             <v-text-input name="cardNum"
                         id="cardNum"
                         placeholder="0000-0000-0000-0000"
+                        type="number"
             ></v-text-input>
         	</div>
     	</div>
@@ -63,6 +56,7 @@
             <v-text-input name="cardCVC"
                         id="cardCVC"
                         placeholder="****"
+                        type="number"
             ></v-text-input>
         	</div>
     	</div>
@@ -72,7 +66,7 @@
 		</div>
 
     	<div>
-			<p> 결제금액 : 30,000원 </p>
+			<p> 결제금액 : </p>
 		</div>
 
 	</div>
@@ -85,10 +79,24 @@
 </template>
 
 <script>
+import BookItem from './BookItem.vue'
+
 export default {
+    data () {
+      return {
+        bookList: [
+          {title: '전공서적1', imageUrl: 'https://s3.amazonaws.com/titlepages.leanpub.com/vuejs2-korean/hero?1485448142'},
+          {title: '전공서적2', imageUrl: 'http://www.acornpub.co.kr/image/book/nd/hx/1494927544fPzhoVnU.jpg'}
+        ]
+      }
+    },
   methods: {
 
-  }
+  },
+    components: {
+      BookItem: BookItem,
+    }
+
 }
 </script>
 
