@@ -1,75 +1,61 @@
 <template lang="html">
-	<div>
+<div>
+	<div class="c-box">
+		<v-card style="overflow: hidden;">
+
 		<div>
-            <p> 대여정보 확인 </p>
-        </div>
-		<div class="c-box">
-			<v-card style="overflow: hidden;">
-				<div class="c-imgspace">
-		      		<div class="c-img">
-		      			<a>book1</a>
-		      		</div>
-		      		<div class="c-img">
-		      			<a>book2</a>
-		      		</div>
-		      		<div class="c-img">
-		      			<a>book3</a>
-		      		</div>
-		      		<div class="c-img">
-		      			<a>book4</a>
-		      		</div>
-		      	</div>
-		        <div class="c-total">
-		            <p> Total Textbook : 4 </p>
-		        </div>
-		    </v-card>
+			<p> 3개월 PLAN 구매 </p>
 		</div>
-    <div class= "p-box">
-    	<div>
-	    	<h4> Payment Method </h4>
-	    </div>
-	    <div>
-	    	<a> Credit or Debit Cards </a>
-	    </div>
-	    <div>
-	    	<a> Cards Number </a>
-	    </div>
-    	<div>
-	    	<div class="p-num">
-		    	<div class="input-field">
-		            <v-text-input name="first"
-		                        id="first"
-		                        placeholder="XXXX"
-		            ></v-text-input>
-		        </div>
-		    </div>
-		    <div class="p-num">
-		        <div class="input-field">
-		            <v-text-input name="last"
-		                        id="last"
-		                        placeholder="XXXX"
-		            ></v-text-input>
-		        </div>
-		    </div>
-		    <div class="p-num">
-		        <div class="input-field">
-		            <v-text-input name="last"
-		                        id="last"
-		                        placeholder="XXXX"
-		            ></v-text-input>
-		        </div>
-		    </div>
-		    <div class="p-num">
-		        <div class="input-field">
-		            <v-text-input name="last"
-		                        id="last"
-		                        placeholder="XXXX"
-		            ></v-text-input>
-		        </div>
-		    </div>
+		<div>
+			<p> 구매자 </p>
 		</div>
-    </div>
-  </div>
+		<div class="c-input">
+			<div class="input-field">
+            <v-text-input name="name"
+                        id="name"
+                        placeholder="홍길동"
+            ></v-text-input>
+        	</div>
+    	</div>
+
+    	<div>
+			<p> 카드번호 </p>
+		</div>
+		<div class="c-input">
+			<div class="input-field">
+            <v-text-input name="cardNum"
+                        id="cardNum"
+                        placeholder="0000-0000-0000-0000"
+            ></v-text-input>
+        	</div>
+    	</div>
+
+    	<div>
+			<p> CVC </p>
+		</div>
+		<div class="c-input">
+			<div class="input-field">
+            <v-text-input name="cardCVC"
+                        id="cardCVC"
+                        placeholder="****"
+            ></v-text-input>
+        	</div>
+    	</div>
+
+    	<div>
+			<p> 이용기간 </p>
+		</div>
+
+    	<div>
+			<p> 결제금액 : 30,000원 </p>
+		</div>
+
+	    </v-card>
+	</div>
+	<div>
+		<v-btn>구매</v-btn>
+	</div>
+</div>
 </template>
 
 <script>
@@ -83,33 +69,11 @@ export default {
 <style lang="scss">
 
 .c-box {
-    margin: 0px 50px 50px 50px;
+    margin: 100px 300px 50px 300px;
 }
 
-.c-imgspace {
-	height: 250px;
-}
-
-.c-img {
-	width: 100px;
-	height: 200px;
-	margin: 20px;
-	float:left;
-}
-
-.c-total {
-	margin: 20px;
-	float: right;
-}
-
-.p-box {
-    margin: 50px;
-}
-
-.p-num {
-	width: 100px;
-	float:left;
-	margin: 10px;
+.c-input {
+	margin: 0px 20px 20px 20px;
 }
 
 </style>
