@@ -49,9 +49,7 @@ function createNewBook(bookData) {
 *************************************************************************/
 function showBookList() {
   var bookArr = [];
-  // bookArr = firebase.database().ref('/books/list').books.find({});
   bookArr = firebase.database().ref('/books/list').find({});
-  // bookArr = firebase.database().ref('books').find({});  
   return bookArr;
 }
 // [END write_fan_out]
