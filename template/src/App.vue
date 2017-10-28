@@ -4,10 +4,15 @@
       <a href="#!" class="brand-logo" slot="logo"><router-link to="/">BBCC</router-link></a>
       <ul class="right">
         <li>
-          <router-link to="/order/plan">주문</router-link>
+          <router-link to="/order">주문</router-link>
         </li>
         <li>
           <a href="#!" v-side-nav:demo><v-icon>사이드</v-icon></a>
+        </li>
+        <li>
+          <div id="example-2">
+          <a><v-icon>로그인</v-icon></a>
+          </div>
         </li>
       </ul>
       <v-side-nav id="demo">
@@ -19,14 +24,15 @@
       </v-side-nav>
     </v-nav>
     <router-view></router-view>
-  </div>
+</div>
+
 </template>
 
 <script>
   import Vue from "vue"
   import VueRouter from 'vue-router'
   import Materials from "vue-materials"
-  Vue.use(VueRouter)
+  Vue.use(VueRouter);
   Vue.use(Materials);
 
   import Order from './components/Order.vue'
@@ -44,6 +50,7 @@
   ];
 
   const router = new VueRouter({routes});
+
 
   export default {
     name: 'app',
