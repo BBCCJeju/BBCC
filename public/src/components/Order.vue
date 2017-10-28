@@ -7,7 +7,7 @@
 			<v-card style="overflow: hidden;">
 				<div class="o-imgspace">
 					<div class="cart-item" v-for="(bookItem, index) in bookList" :key="bookItem.title">
-						<img :src="JSON.parse(bookItem).img">
+						<img :src="JSON.parse(bookItem).img" />
 					</div>
 		      	</div>
 		        <div class="o-total">
@@ -23,7 +23,7 @@
 			<p> 3개월 PLAN 구매 </p>
 		</div>
 		<div>
-			<p> 구매자 </p>
+			<p> 이름 </p>
 		</div>
 		<div class="p-input">
 			<div class="input-field">
@@ -98,21 +98,40 @@
 	            ></v-text-input>
 	        	</div>
 	    	</div>
+
+	    	<div class="p-ddddd">
+			<p> aaaa </p>
+			</div>
+
+	    	<div class="p-num">
+				<div class="input-field">
+	            <v-text-input name="cardNum"
+	                        id="cardNum"
+	                        v-model="cardNum"
+	                        placeholder="00"
+	                        type="number"
+	                        maxlength="2"
+	            ></v-text-input>
+	        	</div>
+	    	</div>
+
+	    	<div class="p-dddd">
+			<p> / </p>
+			</div>
+
+	    	<div class="p-num">
+				<div class="input-field">
+	            <v-text-input name="cardNum"
+	                        id="cardNum"
+	                        v-model="cardNum"
+	                        placeholder="0000"
+	                        type="number"
+	                        maxlength="4"
+	            ></v-text-input>
+	        	</div>
+	    	</div>
+
     	</div>
-
-    	<div class="input-field">
-            <v-select name="select"
-                      id="select"
-                      :items="items1"
-            ></v-select>
-        </div>
-
-        <div class="input-field">
-            <v-select name="select"
-                      id="select"
-                      :items="items2"
-            ></v-select>
-        </div>
 
     	<div>
 			<p> CVC </p>
@@ -138,7 +157,7 @@
 
 	</div>
 	<div>
-		<v-btn>대여</v-btn>
+		<router-link to="/order/complete"><v-btn>대여</v-btn></router-link>
 	</div>
 		</div>
     </div>
@@ -226,16 +245,24 @@ export default {
 	float:left;
 	margin: 20px 0px 0px 0px;
 }
-
 .p-inputspace {
-	height: 120px;
+    height: 120px;
+}
+
+.p-ddddd {
+	color: #ffffff;
+	margin: 20px 0px 0px 0px;
 }
 
 .cart-item {
-	display: inline-block;
+    display: inline-block;
 	img {
 		width: 100px;
 	}
+
+}
+.p-inputspace {
+	height: 120px;
 }
 
 </style>

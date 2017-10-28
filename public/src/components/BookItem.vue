@@ -8,7 +8,9 @@
     <img :src="bookData.img">
     <!-- <div class="book-img" :style="{ 'background-image': 'url(' + bookData.img + ')' }"></div> -->
     <div class="book-info">
-      <span class="card-title">{{bookData.title}}</span>
+      <div class="card-title">{{bookData.title}}</div>
+      <div class="card-author">{{bookData.author}}</div>
+      
     </div>
   </section>
 </template>
@@ -50,6 +52,7 @@ export default {
 </script>
 <style lang="scss">
   .book-container {
+    margin-bottom: 1rem;
     img {
       width: 100%;
       max-height: 16.3rem;
@@ -58,6 +61,14 @@ export default {
     }
     .book-info {
       height: 3rem;
+      .card-title {
+        font-weight: 500;
+    color: #444444;
+        margin: 6px 0 1px;
+      }
+      .card-author {
+        color: #747474;
+      }
     }
     .add-container {
         position: relative;

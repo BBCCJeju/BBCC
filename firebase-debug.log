@@ -1,0 +1,43 @@
+[debug] [2017-10-28T21:44:40.165Z] ----------------------------------------------------------------------
+[debug] [2017-10-28T21:44:40.169Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-10-28T21:44:40.169Z] CLI Version:   3.13.1
+[debug] [2017-10-28T21:44:40.169Z] Platform:      darwin
+[debug] [2017-10-28T21:44:40.169Z] Node Version:  v6.11.0
+[debug] [2017-10-28T21:44:40.170Z] Time:          Sun Oct 29 2017 06:44:40 GMT+0900 (KST)
+[debug] [2017-10-28T21:44:40.170Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-28T21:44:40.189Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-28T21:44:40.189Z] > authorizing via signed-in user
+[debug] [2017-10-28T21:44:40.191Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-28T21:44:40.192Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/irju2G72dfytPcb7BVq7BPXWwj0ySySx3VRtA9BeFt6Hht4eu42vVQYApf9qe0cM',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Oct 29 2017 06:44:40 GMT+0900 (KST)
+[debug] [2017-10-28T21:44:41.240Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-28T21:44:41.251Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/bbcc-410d8  
+ Sun Oct 29 2017 06:44:41 GMT+0900 (KST)
+[debug] [2017-10-28T21:44:42.990Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-28T21:44:42.991Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/bbcc-410d8/tokens  
+ Sun Oct 29 2017 06:44:42 GMT+0900 (KST)
+[debug] [2017-10-28T21:44:43.995Z] <<< HTTP RESPONSE 200
+[info] 2
+[info] 
+[info] === Deploying to 'bbcc-410d8'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2017-10-28T21:44:47.772Z] >>> HTTP REQUEST PUT https://bbcc-410d8.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": "true",
+    ".write": "true"
+  }
+}
+ 
+ Sun Oct 29 2017 06:44:47 GMT+0900 (KST)
+[debug] [2017-10-28T21:44:50.853Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax is valid
+[info] i  hosting: preparing public directory for upload...
+[debug] [2017-10-28T21:44:51.017Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/bbcc-410d8/uploads/-KxZwS6c54cXVO1DQLuQ?fileCount=18&message=  
+ Sun Oct 29 2017 06:44:51 GMT+0900 (KST)
