@@ -1,0 +1,27 @@
+[debug] [2017-10-28T07:00:05.167Z] ----------------------------------------------------------------------
+[debug] [2017-10-28T07:00:05.170Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-10-28T07:00:05.170Z] CLI Version:   3.13.1
+[debug] [2017-10-28T07:00:05.170Z] Platform:      darwin
+[debug] [2017-10-28T07:00:05.170Z] Node Version:  v6.11.3
+[debug] [2017-10-28T07:00:05.171Z] Time:          Sat Oct 28 2017 16:00:05 GMT+0900 (KST)
+[debug] [2017-10-28T07:00:05.171Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-28T07:00:05.186Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-28T07:00:05.186Z] > authorizing via signed-in user
+[debug] [2017-10-28T07:00:05.188Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/bbcc-410d8  
+ Sat Oct 28 2017 16:00:05 GMT+0900 (KST)
+[debug] [2017-10-28T07:00:06.708Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-28T07:00:06.709Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/bbcc-410d8/tokens  
+ Sat Oct 28 2017 16:00:06 GMT+0900 (KST)
+[debug] [2017-10-28T07:00:07.643Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/junhee/dev/hackathon'...
+[info] 
+[debug] [2017-10-28T07:00:07.647Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/bbcc-410d8  
+ Sat Oct 28 2017 16:00:07 GMT+0900 (KST)
+[debug] [2017-10-28T07:00:08.938Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-28T07:00:08.939Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/790989195073/clients/_:getWebAppConfig  
+ Sat Oct 28 2017 16:00:08 GMT+0900 (KST)
+[debug] [2017-10-28T07:00:10.088Z] <<< HTTP RESPONSE 200
+[info] ✔  hosting: Local server: http://localhost:5000
+
