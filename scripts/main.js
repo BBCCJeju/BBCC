@@ -32,26 +32,21 @@ var myPostsMenuButton = document.getElementById('menu-my-posts');
 var myTopPostsMenuButton = document.getElementById('menu-my-top-posts');
 var listeningFirebaseRefs = [];
 
-/**
- * Creates a new book to the Firebase DB.
- */
-// [START write_fan_out]
-// bookData : obj
+/*********************************************************************** 
+ *                              - 책 등록 (C)
+*************************************************************************/
 function createNewBook(bookData) {
-
   //책 등록
   var bookData = bookData;
   var book = {};
   book['/books/' + isbn] = bookData;
   return firebase.database().ref().create(book);
 }
-// [END write_fan_out]
 
 
-/**
- * Shows book list
- */
-// [START write_fan_out]
+/*********************************************************************** 
+ *                              - 책 목록 조회 (R)
+*************************************************************************/
 function showBookList() {
   var bookArr = [];
   // bookArr = firebase.database().ref('/books/list').books.find({});
@@ -62,16 +57,15 @@ function showBookList() {
 // [END write_fan_out]
 
 
-/**
- * Shows book detail info
- */
-// [START write_fan_out]
+
+/*********************************************************************** 
+ *                              - 책 상세 조회 (R)
+*************************************************************************/
 function showBookDetail(isbn) {
   var bookDetail = {};
   bookDetail = firebase.database().ref().books.find({ isbn: isbn });
   return bookDetail;
 }
-// [END write_fan_out]
 
 
 
