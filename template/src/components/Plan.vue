@@ -1,7 +1,6 @@
 <template lang="html">
-<div>
+<div class="test">
 	<div class="c-box">
-		<v-card style="overflow: hidden;">
 
 		<div>
 			<p> 3개월 PLAN 구매 </p>
@@ -50,7 +49,6 @@
 			<p> 결제금액 : 30,000원 </p>
 		</div>
 
-	    </v-card>
 	</div>
 	<div>
 		<v-btn>구매</v-btn>
@@ -69,11 +67,18 @@ export default {
 <style lang="scss">
 
 .c-box {
-    margin: 100px 300px 50px 300px;
+    width: 380px;
+	height: 580px;
+	background-color: #ffffff;
+	box-shadow: 2px 6px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .c-input {
 	margin: 0px 20px 20px 20px;
+}
+
+.test {
+	background-color: #f7f7f7;
 }
 
 </style>
