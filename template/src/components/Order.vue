@@ -23,7 +23,7 @@
 			<p> 3개월 PLAN 구매 </p>
 		</div>
 		<div>
-			<p> 구매자 </p>
+			<p> 이름 </p>
 		</div>
 		<div class="p-input">
 			<div class="input-field">
@@ -98,21 +98,40 @@
 	            ></v-text-input>
 	        	</div>
 	    	</div>
+
+	    	<div class="p-ddddd">
+			<p> aaaa </p>
+			</div>
+
+	    	<div class="p-num">
+				<div class="input-field">
+	            <v-text-input name="cardNum"
+	                        id="cardNum"
+	                        v-model="cardNum"
+	                        placeholder="00"
+	                        type="number"
+	                        maxlength="2"
+	            ></v-text-input>
+	        	</div>
+	    	</div>
+
+	    	<div class="p-dddd">
+			<p> / </p>
+			</div>
+
+	    	<div class="p-num">
+				<div class="input-field">
+	            <v-text-input name="cardNum"
+	                        id="cardNum"
+	                        v-model="cardNum"
+	                        placeholder="0000"
+	                        type="number"
+	                        maxlength="4"
+	            ></v-text-input>
+	        	</div>
+	    	</div>
+
     	</div>
-
-    	<div class="input-field">
-            <v-select name="select"
-                      id="select"
-                      :items="items1"
-            ></v-select>
-        </div>
-
-        <div class="input-field">
-            <v-select name="select"
-                      id="select"
-                      :items="items2"
-            ></v-select>
-        </div>
 
     	<div>
 			<p> CVC </p>
@@ -208,6 +227,12 @@ export default {
 }
 
 .p-dddd {
+	float:left;
+	margin: 20px 0px 0px 0px;
+}
+
+.p-ddddd {
+	color: #ffffff;
 	float:left;
 	margin: 20px 0px 0px 0px;
 }
