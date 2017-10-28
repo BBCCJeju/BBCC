@@ -99,10 +99,6 @@
 	        	</div>
 	    	</div>
 
-	    	<div class="p-ddddd">
-			<p> aaaa </p>
-			</div>
-
 	    	<div class="p-num">
 				<div class="input-field">
 	            <v-text-input name="cardNum"
@@ -152,7 +148,7 @@
 		</div>
 
     	<div>
-			<p> 결제금액 : </p>
+			<p> 결제금액 : $30 </p>
 		</div>
 
 	</div>
@@ -174,17 +170,6 @@ export default {
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
-        bookList: [
-          {title: '전공서적1', imageUrl: 'https://s3.amazonaws.com/titlepages.leanpub.com/vuejs2-korean/hero?1485448142'},
-          {title: '전공서적2', imageUrl: 'http://www.acornpub.co.kr/image/book/nd/hx/1494927544fPzhoVnU.jpg'}
-        ],
-        items1: [
-        {
-        },],
-        items2: [
-        {
-        }, {
-        }]
       }
     },
   methods: {

@@ -1,15 +1,20 @@
 <template lang="html">
 	<div>
 		<div class="p-box">
-            <h5> 도서 대여 신청이 완료되었습니다! </h5>
-            <p> 해당 도서 목록은 마이페이지에서도 확인하실 수 있습니다. </p>
+					<img src="./trees.svg">
+					<div class="payment-done">
+						<h5>Yeah! You already finished.</h5>
+						<p>You can check this in 'my-page'</p>
+					</div>
+            
         </div>
 		<div class="o-card">
 			<v-card style="overflow: hidden;">
 				<div class="o-imgspace">
-		      		<li v-for="(bookItem, index) in bookList" :key="bookItem.title">
-					    <BookItem v-bind:bookData="bookItem"></BookItem>
-					</li>
+					<div class="cart-item" v-for="(bookItem, index) in bookList" :key="bookItem.title">
+						<img :src="JSON.parse(bookItem).img" />
+					</div>
+		      		
 		      	</div>
 		        <div class="o-total">
 		            <p> Total Textbook : </p>
@@ -18,7 +23,7 @@
 		    </v-card>
 
 		    <div class="p-box">
-		    	<router-link to="/"><v-btn>홈으로 돌아가기</v-btn></router-link>
+		    	<router-link to="/"><v-btn>Go to main page</v-btn></router-link>
 				</div>
 		</div>
   </div>
@@ -28,6 +33,9 @@
 import BookItem from './BookItem.vue'
 
 export default {
+	created() {
+		this.bookList =  this.allStorage();
+	},
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
@@ -38,7 +46,19 @@ export default {
       }
     },
   methods: {
-
+		allStorage: function() {
+      var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+        console.log("올스토", keys)
+        while ( i-- ) {
+          var item = localStorage.getItem(keys[i]);
+          if(Number(keys[i])) {
+            values.push( localStorage.getItem(keys[i]) );
+          }
+        }
+        return values;
+    }
   },
     components: {
       BookItem: BookItem,
@@ -71,6 +91,7 @@ export default {
 
 .p-box {
     margin: 50px;
+		text-align: center;
 }
 
 .p-num {
@@ -84,14 +105,27 @@ export default {
 	margin: 20px 0px 0px 0px;
 }
 
-.p-ddddd {
-	color: #ffffff;
-	float:left;
-	margin: 20px 0px 0px 0px;
-}
-
 .p-inputspace {
 	height: 120px;
+}
+
+.payment-done {
+	text-align: center;
+	h5 {
+		    font-weight: 800;
+    font-size: 2.2rem;
+	}
+	p {
+		    font-size: 1.2rem;
+    margin: 0;
+	}
+}
+
+.cart-item {
+    display: inline-block;
+	img {
+		width: 100px;
+	}
 }
 
 </style>
