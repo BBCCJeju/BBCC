@@ -32,14 +32,9 @@
         </div>
       </div>
       </v-row>
-      <div class="submit-btn">
-        대여하기
-        <v-icon>arrow_forward</v-icon>
+      <router-link to="/order"><div class="submit-btn">대여하기<v-icon>arrow_forward</v-icon></div></router-link>
       </div>
-      </div>
-      
     </section>
-    
   </div>
 </template>
 

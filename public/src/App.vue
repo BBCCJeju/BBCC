@@ -9,6 +9,11 @@
         <li>
           <a href="#!" v-side-nav:demo><v-icon>shopping_cart</v-icon></a>
         </li>
+        <li>
+          <div id="example-2">
+          <a><v-icon>로그인</v-icon></a>
+          </div>
+        </li>
       </ul>
       <v-side-nav id="demo">
         <ul>
@@ -18,26 +23,34 @@
         </ul>
       </v-side-nav>
     </v-nav>
-      <router-view></router-view>
-  </div>
+    <router-view></router-view>
+</div>
+
 </template>
 
 <script>
   import Vue from "vue"
   import VueRouter from 'vue-router'
   import Materials from "vue-materials"
-  Vue.use(VueRouter)
+  Vue.use(VueRouter);
   Vue.use(Materials);
 
   import Order from './components/Order.vue'
   import Home from './components/Home.vue'
+  import Plan from './components/Plan.vue'
+  import MyPage from './components/MyPage.vue'
+  import Rental from './components/Rental.vue'
 
   const routes = [
     { path: '/', component: Home },
     { path: '/order', component: Order },
+    { path: '/order/plan', component: Plan },
+    { path: '/my-page', component: MyPage },
+    { path: '/rental', component: Rental },
   ];
 
   const router = new VueRouter({routes});
+
 
   export default {
     name: 'app',
