@@ -11,7 +11,7 @@
 					</li>
 		      	</div>
 		        <div class="o-total">
-		            <p> Total Textbook : 4 </p>
+		            <p> Total Textbook : </p>
 		        </div>
 		    </v-card>
 		</div>
@@ -35,18 +35,84 @@
         	</div>
     	</div>
 
-    	<div>
-			<p> 카드번호 </p>
-		</div>
-		<div class="p-input">
-			<div class="input-field">
-            <v-text-input name="cardNum"
-                        id="cardNum"
-                        placeholder="0000-0000-0000-0000"
-                        type="number"
-            ></v-text-input>
-        	</div>
+    	<div class="p-inputspace">
+	    	<div>
+				<p> 카드번호 </p>
+			</div>
+			<div class="p-num">
+				<div class="input-field">
+	            <v-text-input name="cardNum"
+	                        id="cardNum"
+	                        v-model="cardNum"
+	                        placeholder="0000"
+	                        type="password"
+	                        maxlength="4"
+	            ></v-text-input>
+	        	</div>
+	    	</div>
+
+	    	<div class="p-dddd">
+			<p> ㅡ </p>
+			</div>
+
+	    	<div class="p-num">
+				<div class="input-field">
+	            <v-text-input name="cardNum"
+	                        id="cardNum"
+	                        v-model="cardNum"
+	                        placeholder="0000"
+	                        type="password"
+	                        maxlength="4"
+	            ></v-text-input>
+	        	</div>
+	    	</div>
+
+	    	<div class="p-dddd">
+			<p> ㅡ </p>
+			</div>
+
+	    	<div class="p-num">
+				<div class="input-field">
+	            <v-text-input name="cardNum"
+	                        id="cardNum"
+	                        v-model="cardNum"
+	                        placeholder="0000"
+	                        type="password"
+	                        maxlength="4"
+	            ></v-text-input>
+	        	</div>
+	    	</div>
+
+	    	<div class="p-dddd">
+			<p> ㅡ </p>
+			</div>
+
+	    	<div class="p-num">
+				<div class="input-field">
+	            <v-text-input name="cardNum"
+	                        id="cardNum"
+	                        v-model="cardNum"
+	                        placeholder="0000"
+	                        type="password"
+	                        maxlength="4"
+	            ></v-text-input>
+	        	</div>
+	    	</div>
     	</div>
+
+    	<div class="input-field">
+            <v-select name="select"
+                      id="select"
+                      :items="items1"
+            ></v-select>
+        </div>
+
+        <div class="input-field">
+            <v-select name="select"
+                      id="select"
+                      :items="items2"
+            ></v-select>
+        </div>
 
     	<div>
 			<p> CVC </p>
@@ -55,8 +121,9 @@
 			<div class="input-field">
             <v-text-input name="cardCVC"
                         id="cardCVC"
-                        placeholder="****"
-                        type="number"
+                        placeholder="***"
+                        type="password"
+                        maxlength="3"
             ></v-text-input>
         	</div>
     	</div>
@@ -84,10 +151,18 @@ import BookItem from './BookItem.vue'
 export default {
     data () {
       return {
+        msg: 'Welcome to Your Vue.js App',
         bookList: [
           {title: '전공서적1', imageUrl: 'https://s3.amazonaws.com/titlepages.leanpub.com/vuejs2-korean/hero?1485448142'},
           {title: '전공서적2', imageUrl: 'http://www.acornpub.co.kr/image/book/nd/hx/1494927544fPzhoVnU.jpg'}
-        ]
+        ],
+        items1: [
+        {
+        },],
+        items2: [
+        {
+        }, {
+        }]
       }
     },
   methods: {
@@ -127,9 +202,18 @@ export default {
 }
 
 .p-num {
-	width: 100px;
+	width: 50px;
 	float:left;
 	margin: 10px;
+}
+
+.p-dddd {
+	float:left;
+	margin: 20px 0px 0px 0px;
+}
+
+.p-inputspace {
+	height: 120px;
 }
 
 </style>
