@@ -33,12 +33,14 @@
   import Home from './components/Home.vue'
   import Plan from './components/Plan.vue'
   import MyPage from './components/MyPage.vue'
+  import Rental from './components/Rental.vue'
 
   const routes = [
     { path: '/', component: Home },
     { path: '/order', component: Order },
     { path: '/order/plan', component: Plan },
     { path: '/my-page', component: MyPage },
+    { path: '/rental', component: Rental },
   ];
 
   const router = new VueRouter({routes});
