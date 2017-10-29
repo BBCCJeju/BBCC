@@ -24,7 +24,7 @@
       </v-row>
     </section>
     </v-container>
-    <section class="cart-section">
+    <section class="cart-section" >
       <h2><v-icon>shopping_cart</v-icon>My Book Cart</h2>
       <div>
       <div class="book-container">
@@ -71,7 +71,7 @@ function showBookList() {
 
 
 
-// showBookList();
+
 
 export default {
   firebase: function () {

@@ -5,7 +5,11 @@
       <ul class="right">
         <li>
           <div id="example-2">
-          <a>Login</a>
+            <div v-if="userPhoto" class="avatar-container" >
+              <img :src="userPhoto"/>
+            </div>
+          <a v-else v-on:click="firebaseLogin">Login</a>
+            
           </div>
         </li>
       </ul>
@@ -47,14 +51,33 @@
 
   const router = new VueRouter({routes});
 
+  
 
   export default {
     name: 'app',
+    created() {
+      var that = this;
+      function onAuthStateChanged(user) {
+        if (user) {
+          that.userPhoto = user.photoURL;
+          console.log("후에에에 유저 있어", user.photoURL)
+        }
+      }
+      firebase.auth().onAuthStateChanged(onAuthStateChanged);
+    },
     router,
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
+        userPhoto: ''
       }
+    },
+    methods: {
+    firebaseLogin: function (event) {
+      console.log("하이하이");
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider);
+     }
     }
   }
 </script>
@@ -86,6 +109,15 @@
         width: 70%;
       }
       }
+    }
+  }
+  .avatar-container {
+    img {
+          width: 42px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-top: 10px;
+        margin-right: 0.7rem;
     }
   }
 </style>

@@ -244,7 +244,6 @@ export default {
 	img {
 		width: 100px;
 	}
-
 }
 .p-inputspace {
 	height: 120px;
