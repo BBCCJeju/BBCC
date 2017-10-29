@@ -10,7 +10,7 @@
       <div class="search-container">
         <input v-model="keyword" type="text" name="search" placeholder="Search the book with any keywords!">
         <div className="search-btn-container">
-                  <v-icon>search</v-icon>
+            <v-icon style="vertical-align: -webkit-baseline-middle;">search</v-icon>
                 </div>
       </div>
       </v-container>
@@ -227,6 +227,7 @@ export default {
     background-color: #fafafa;
     padding: 0;
     border-top: 1px solid #e2e2e2;
+    box-shadow: -1px 1px 20px 9px rgba(97, 97, 97, 0.05);
     h2 {
     font-size: 0.9rem;
     border-bottom: 1px solid #e2e2e2;
