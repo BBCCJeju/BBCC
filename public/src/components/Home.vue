@@ -82,6 +82,7 @@ export default {
   },
   
   created() {
+    window.scrollTo(0,0);
     this.getList();
     // axios.get('http://52.79.207.88:8000/book').then(data => {
     //     this.bookList = data.data;
