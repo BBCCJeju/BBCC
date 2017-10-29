@@ -1,29 +1,34 @@
 <template lang="html">
 	<div>
-		<div>
-            <p> 대여정보 확인 </p>
-        </div>
+		<div class="payment-done">
+			<img src="./book.jpg">
+		<h5>Payment</h5>
+		<p>First step and also a final step</p>
+	</div>
 		<div class="o-card">
-			<v-card style="overflow: hidden;">
+			<v-card style="overflow: hidden;  padding: 0.5rem 1.5rem;">
+				<h4 class="sub-header">Confirm books</h4>
 				<div class="o-imgspace">
 					<div class="cart-item" v-for="(bookItem, index) in bookList" :key="bookItem.title">
-						<img :src="JSON.parse(bookItem).img">
+						<img :src="JSON.parse(bookItem).img" />
+						<p>{{JSON.parse(bookItem).title}}</p>
 					</div>
 		      	</div>
 		        <div class="o-total">
-		            <p> Total Textbook : </p>
+		            <p> Total Textbook : {{bookList.length}}</p>
 		        </div>
 		    </v-card>
 		</div>
     <div class= "p-box">
+		<v-card style="overflow: hidden;  padding: 0.5rem 1.5rem;">
     	<div>
-	    	<h4> Payment Method </h4>
+	    	<h4 class="sub-header"> Payment Method </h4>
 	    </div>
 	   <div>
-			<p> 3개월 PLAN 구매 </p>
+			<p> 3 Months PLAN </p>
 		</div>
 		<div>
-			<p> 구매자 </p>
+			<p>Name</p>
 		</div>
 		<div class="p-input">
 			<div class="input-field">
@@ -37,7 +42,7 @@
 
     	<div class="p-inputspace">
 	    	<div>
-				<p> 카드번호 </p>
+				<p> Card Number </p>
 			</div>
 			<div class="p-num">
 				<div class="input-field">
@@ -98,21 +103,36 @@
 	            ></v-text-input>
 	        	</div>
 	    	</div>
+
+	    	<div class="p-num">
+				<div class="input-field">
+	            <v-text-input name="cardNum"
+	                        id="cardNum"
+	                        v-model="cardNum"
+	                        placeholder="00"
+	                        type="number"
+	                        maxlength="2"
+	            ></v-text-input>
+	        	</div>
+	    	</div>
+
+	    	<div class="p-dddd">
+			<p> / </p>
+			</div>
+
+	    	<div class="p-num">
+				<div class="input-field">
+	            <v-text-input name="cardNum"
+	                        id="cardNum"
+	                        v-model="cardNum"
+	                        placeholder="0000"
+	                        type="number"
+	                        maxlength="4"
+	            ></v-text-input>
+	        	</div>
+	    	</div>
+
     	</div>
-
-    	<div class="input-field">
-            <v-select name="select"
-                      id="select"
-                      :items="items1"
-            ></v-select>
-        </div>
-
-        <div class="input-field">
-            <v-select name="select"
-                      id="select"
-                      :items="items2"
-            ></v-select>
-        </div>
 
     	<div>
 			<p> CVC </p>
@@ -127,19 +147,15 @@
             ></v-text-input>
         	</div>
     	</div>
-
     	<div>
-			<p> 이용기간 </p>
+			<p> Total Price : $30 </p>
 		</div>
-
-    	<div>
-			<p> 결제금액 : </p>
+	</v-card>
+		<div class="complete-payment">
+			<router-link to="/order/complete"><v-btn>Confirm Payment</v-btn></router-link>
 		</div>
-
 	</div>
-	<div>
-		<v-btn>대여</v-btn>
-	</div>
+	
 		</div>
     </div>
   </div>
@@ -155,17 +171,6 @@ export default {
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
-        bookList: [
-          {title: '전공서적1', imageUrl: 'https://s3.amazonaws.com/titlepages.leanpub.com/vuejs2-korean/hero?1485448142'},
-          {title: '전공서적2', imageUrl: 'http://www.acornpub.co.kr/image/book/nd/hx/1494927544fPzhoVnU.jpg'}
-        ],
-        items1: [
-        {
-        },],
-        items2: [
-        {
-        }, {
-        }]
       }
     },
   methods: {
@@ -197,7 +202,7 @@ export default {
 }
 
 .o-imgspace {
-	height: 200px;
+	// height: 200px;
 }
 
 .o-img {
@@ -214,6 +219,7 @@ export default {
 
 .p-box {
     margin: 50px;
+	text-align: left;
 }
 
 .p-num {
@@ -226,16 +232,55 @@ export default {
 	float:left;
 	margin: 20px 0px 0px 0px;
 }
+.p-inputspace {
+    height: 120px;
+}
 
+.p-ddddd {
+	color: #ffffff;
+	margin: 20px 0px 0px 0px;
+}
+
+.cart-item {
+    display: inline-block;
+	    margin-right: 1.2rem;
+		width: 130px;
+	img {
+		width: 100px;
+	}
+}
 .p-inputspace {
 	height: 120px;
 }
 
-.cart-item {
-	display: inline-block;
-	img {
-		width: 100px;
+.payment-done {
+	text-align: center;
+	h5 {
+		    font-weight: 800;
+    font-size: 2.2rem;
 	}
+	p {
+		    font-size: 1.2rem;
+    margin: 0;
+	}
+	img {
+		    width: 10rem;
+    margin-top: 1rem;
+    margin-left: 4rem;
+	}
+}
+.complete-payment {
+	    text-align: right;
+	button {
+		    height: 50px;
+    line-height: 50px;
+    background: #ffbd19;
+    font-weight: bolder;
+	}
+}
+.sub-header {
+	font-weight: 900;
+    font-size: 1.8rem;
 }
 
 </style>

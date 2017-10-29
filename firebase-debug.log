@@ -1,0 +1,47 @@
+[debug] [2017-10-29T00:06:24.255Z] ----------------------------------------------------------------------
+[debug] [2017-10-29T00:06:24.257Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-10-29T00:06:24.258Z] CLI Version:   3.13.1
+[debug] [2017-10-29T00:06:24.258Z] Platform:      darwin
+[debug] [2017-10-29T00:06:24.258Z] Node Version:  v6.11.0
+[debug] [2017-10-29T00:06:24.259Z] Time:          Sun Oct 29 2017 09:06:24 GMT+0900 (KST)
+[debug] [2017-10-29T00:06:24.259Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-29T00:06:24.272Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-29T00:06:24.272Z] > authorizing via signed-in user
+[debug] [2017-10-29T00:06:24.275Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/bbcc-410d8  
+ Sun Oct 29 2017 09:06:24 GMT+0900 (KST)
+[debug] [2017-10-29T00:07:25.053Z] ----------------------------------------------------------------------
+[debug] [2017-10-29T00:07:25.056Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-10-29T00:07:25.056Z] CLI Version:   3.13.1
+[debug] [2017-10-29T00:07:25.056Z] Platform:      darwin
+[debug] [2017-10-29T00:07:25.056Z] Node Version:  v6.11.0
+[debug] [2017-10-29T00:07:25.057Z] Time:          Sun Oct 29 2017 09:07:25 GMT+0900 (KST)
+[debug] [2017-10-29T00:07:25.057Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-29T00:07:25.075Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-29T00:07:25.075Z] > authorizing via signed-in user
+[debug] [2017-10-29T00:07:25.078Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/bbcc-410d8  
+ Sun Oct 29 2017 09:07:25 GMT+0900 (KST)
+[debug] [2017-10-29T00:07:26.149Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-29T00:07:26.150Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/bbcc-410d8/tokens  
+ Sun Oct 29 2017 09:07:26 GMT+0900 (KST)
+[debug] [2017-10-29T00:07:27.019Z] <<< HTTP RESPONSE 200
+[info] 2
+[info] 
+[info] === Deploying to 'bbcc-410d8'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2017-10-29T00:07:30.622Z] >>> HTTP REQUEST PUT https://bbcc-410d8.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": "true",
+    ".write": "true"
+  }
+}
+ 
+ Sun Oct 29 2017 09:07:30 GMT+0900 (KST)
+[debug] [2017-10-29T00:07:32.503Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax is valid
+[info] i  hosting: preparing public directory for upload...
+[debug] [2017-10-29T00:07:32.957Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/bbcc-410d8/uploads/-Kx_S6KJWPbTPEmSgFDI?fileCount=27&message=  
+ Sun Oct 29 2017 09:07:32 GMT+0900 (KST)
