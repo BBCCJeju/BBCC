@@ -252,6 +252,7 @@ export default {
       display: inline-block;
       text-align: left;
       margin-right: 1rem;
+          width: initial;
       img {
             
 height: 84px;
