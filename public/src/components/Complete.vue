@@ -6,7 +6,6 @@
 						<h5>Yeah! You already finished.</h5>
 						<p>You can check this in 'my-page'</p>
 					</div>
-            
         </div>
 		<div class="o-card">
 			<v-card style="overflow: hidden;">
