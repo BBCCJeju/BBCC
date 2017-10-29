@@ -8,20 +8,22 @@
 					</div>
         </div>
 		<div class="o-card">
-			<v-card style="overflow: hidden;">
+			<v-card style="overflow: hidden; padding: 0.5rem 1.5rem;">
+				<h4 class="sub-header">Your book list</h4>
 				<div class="o-imgspace">
 					<div class="cart-item" v-for="(bookItem, index) in bookList" :key="bookItem.title">
 						<img :src="JSON.parse(bookItem).img" />
+						<p>{{JSON.parse(bookItem).title}}</p>
 					</div>
 		      		
 		      	</div>
 		        <div class="o-total">
-		            <p> Total Textbook : </p>
+		            <p> Total Textbook : {{bookList.length}}</p>
 		        </div>
 
 		    </v-card>
 
-		    <div class="p-box">
+		    <div class="complete-payment">
 		    	<router-link to="/"><v-btn>Go to main page</v-btn></router-link>
 				</div>
 		</div>
